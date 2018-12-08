@@ -3,45 +3,45 @@
 ## Index
 
 - [Introduction](#Introduction)
-- [Substitution Cipher](#Substitution Cipher)
+- [Substitution Cipher](#Substitution-Cipher)
     - [Limitations](#Limitations)
-- [Simple Substitution Cipher](#Simple Substitution Cipher)   
-    - [Process of Simple Substitution Cipher](#Process of Simple Substitution Cipher)
+- [Simple Substitution Cipher](#Simple-Substitution-Cipher)   
+    - [Process of Simple Substitution Cipher](#Process-of-Simple-Substitution-Cipher)
     - [Limitations](#Limitations)
-- [Polyalphabetic Cipher](#Polyalphabetic Cipher)
+- [Polyalphabetic Cipher](#Polyalphabetic-Cipher)
     - [Limitations](#Limitations)
-    - [Playfair Cipher](#Playfair Cipher)
-        - [Process of Playfair Cipher](#Process of Playfair Cipher)
+    - [Playfair Cipher](#Playfair-Cipher)
+        - [Process of Playfair Cipher](#Process-of-Playfair-Cipher)
         - [Decryption](#Decryption)
-        - [Security Value](#Security Value)
-    - [Vigenere Cipher](#Vigenere Cipher)
-        - [Process of Vigenere Cipher](#Process of Vigenere Cipher)
+        - [Security Value](#Security-Value)
+    - [Vigenere Cipher](#Vigenere-Cipher)
+        - [Process of Vigenere Cipher](#Process-of-Vigenere-Cipher)
         - [Decryption](#Decryption)
-        - [Security Value](#Security Value)
-- [Pseudo-Random Number Generators](#Pseudo-Random Number Generators)
+        - [Security Value](#Security-Value)
+- [Pseudo-Random Number Generators](#Pseudo-Random-Number-Generators)
    - [Limitations](#Limitations)
    - [Advantages](#Advantages)
-- [One-Time Pad Cipher](#One-Time Pad Cipher)              
+- [One-Time Pad Cipher](#One-Time-Pad-Cipher)              
    - [Advantages](#Advantages)
-- [Transposition Cipher](#Transposition Cipher)
-   - [Rail Fence Cipher](#Rail Fence Cipher)
-   - [Route Cipher](#Route Cipher)
-   - [Columnar Transposition](#Columnar Transposition)
-   - [Double Transposition](#Double Transposition)    
-   - [Myszkowski Transposition](#Myszkowski Transposition)
-- [Polybius Square](#Polybius Square)
-   - [ADFGVX Cipher](#ADFGVX Cipher)
-   - [Bifid Cipher](#Bifid cipher)
-   - [Nihilist Cipher](#Nihilist cipher)
-   - [Tap Code](#Tap code)
-   - [Trifid Cipher](#Trifid Cipher)
-- [Difference between Ciphers and Codes](#Difference between Ciphers and Codes)   
+- [Transposition Cipher](#Transposition-Cipher)
+   - [Rail Fence Cipher](#Rail-Fence-Cipher)
+   - [Route Cipher](#Route-Cipher)
+   - [Columnar Transposition](#Columnar-Transposition)
+   - [Double Transposition](#Double-Transposition)    
+   - [Myszkowski Transposition](#Myszkowski-Transposition)
+- [Polybius Square](#Polybius-Square)
+   - [ADFGVX Cipher](#ADFGVX-Cipher)
+   - [Bifid Cipher](#Bifid-cipher)
+   - [Nihilist Cipher](#Nihilist-cipher)
+   - [Tap Code](#Tap-code)
+   - [Trifid Cipher](#Trifid-Cipher)
+- [Difference between Ciphers and Codes](#Difference-between-Ciphers-and-Codes)   
 
 ## Introduction
 
 Two people Alice and Bob who share an important secret have to split up. This requires them to communicate private information from a distance. However, an eavesdropper named Eve also wants this information, and has the ability to intercept their messages.
 
-<p align = "center"> ![IMG](./.DATA/IMG_1.png) </p>
+![IMG](./.DATA/IMG_1.PNG)
 
 Alice decides to communicate using letters written in some kind of secret code.
 
@@ -56,11 +56,11 @@ Cryptography begins when we abandon physical locks and use 'ciphers' instead. Ci
 Caesar shifted each letter in his military commands in order to make them appear meaningless should the enemy intercept it. <br>
 For example, Alice and Bob decided to communicate using the Caesar Cipher,  they would need to agree in advance on a shift to use-- say, three.
 
-<p align = "center"> ![IMG](./.DATA/IMG_2.png) </p>
+![IMG](./.DATA/IMG_2.png)
 
 So to encrypt her message, Alice would need to apply a shift of three to each letter in her original message. So A becomes D, B becomes E, C becomes F, and so on.
 
-<p align = "center"> ![IMG](./.DATA/IMG_3.png) </p>
+![IMG](./.DATA/IMG_3.png)
 
 This unreadable, or encrypted message, is then sent to Bob openly. Then Bob simply subtracts the shift of three from each letter in order to read the original message.
 
@@ -68,7 +68,7 @@ This unreadable, or encrypted message, is then sent to Bob openly. Then Bob simp
 
 The weakness of the Caesar Cipher was published 800 years later by an Arab mathematician named Al-Kindi. He broke the Caesar Cipher by using a clue based on an important property of the language a message is written in. If you scan text from any book and count the frequency of each letter, you will find a fairly consistent pattern. For example, these are the letter frequencies of English. This can be thought of as a `Fingerprint of English`.
 
-<p align = "center"> ![IMG](./.DATA/IMG_4.png) </p>
+![IMG](./.DATA/IMG_4.png)
 
 To break this cipher, they count up the frequencies of each letter in the encrypted text and check how far the fingerprint has shifted.
 
@@ -88,7 +88,7 @@ The sender and the receiver may choose any one of these possible permutation as 
 - Underneath the natural order alphabets, write out the chosen permutation of the letters of the alphabet. For encryption, sender replaces each plaintext letters by substituting the permutation letter that is directly beneath it in the table.
 - This process is shown in the following illustration. In this example, the chosen permutation is K,D, G, ..., O. The plaintext ‘point’ is encrypted to ‘MJBXZ’. Here is a jumbled cipher text alphabet, where the order of the cipher text letters is a key.
 
-<p align = "center"> ![IMG](./.DATA/IMG_11.png) </p>
+![IMG](./.DATA/IMG_11.PNG)
 
 On receiving the cipher text, the receiver, who also knows the randomly chosen permutation, replaces each cipher text letter on the bottom row with the corresponding plaintext letter in the top row. The cipher text ‘MJBXZ’ is decrypted to ‘point’.
 
@@ -102,15 +102,15 @@ A strong cipher is one which disguises your fingerprint. To make a lighter finge
 
 For example, Alice and Bob shared a secret shift word (known as a ***Key***).  
 
-<p align = "center"> ![IMG](./.DATA/IMG_5.png) </p>
+![IMG](./.DATA/IMG_5.PNG)
 
 First, Alice converts the word into numbers according to the letter position in the alphabet.
 
-<p align = "center"> ![IMG](./.DATA/IMG_6.png) </p>
+![IMG](./.DATA/IMG_6.PNG)
 
 Next, this sequence of numbers is repeated along the message. Then each letter in the message is encrypted by shifting according to the number below it. Now she is using multiple shifts instead of a single shift across the message, as Caesar had done before.
 
-<p align = "center"> ![IMG](./.DATA/IMG_7.png) </p>
+![IMG](./.DATA/IMG_7.PNG)
 
 Now, A code breaker, Eve, who intercepts this series of messages and calculates the letter frequencies. She will find a flatter distribution, or a lighter fingerprint.
 
@@ -121,7 +121,7 @@ In this case, Alice's cipher contains a repeating code word. To break the encryp
 
 The problem now is to break `Five Caesar Ciphers` in a repeating sequence. The longer the shift word, the stronger the cipher.
 
-<p align = "center"> ![IMG](./.DATA/IMG_8.png) </p>
+![IMG](./.DATA/IMG_8.png)
 
 ## [Playfair Cipher](https://en.wikipedia.org/wiki/Playfair_cipher)
 
@@ -131,7 +131,7 @@ Each of the 25 alphabets must be unique and one letter of the alphabet usually `
 
 If the plaintext contains J, then it is replaced by I. The sender and the receiver deicide on a particular key, say ‘tutorials’. In a key table, the first characters `goinglefttoright` in the table is the phrase, excluding the duplicate letters. The rest of the table will be filled with the remaining letters of the alphabet, in natural order. The key table works out to be −
 
-<p align = "center"> ![IMG](./.DATA/IMG_12.png) </p>
+![IMG](./.DATA/IMG_12.PNG)
 
 ### Process of Playfair Cipher
 
@@ -140,15 +140,15 @@ A plaintext message is split into pairs of two letters digraphs. If there is an 
 The rules of encryption are −
 - If both the letters are in the same column, take the letter below each one `goingbacktothetopifatthebottom`
 
-<p align = "center"> ![IMG](./.DATA/IMG_13.png) </p>
+![IMG](./.DATA/IMG_13.PNG)
 
 - If both letters are in the same row, take the letter to the right of each one `goingbacktotheleftifatthefarthestright`
 
-<p align = "center"> ![IMG](./.DATA/IMG_14.png) </p>
+![IMG](./.DATA/IMG_14.PNG)
 
 - If neither of the preceding two rules are true, form a rectangle with the two letters and take the letters on the horizontal opposite corner of the rectangle.
 
-<p align = "center"> ![IMG](./.DATA/IMG_15.png) </p>
+![IMG](./.DATA/IMG_15.PNG)
 
 Using these rules, the result of the encryption of ‘hide money’ with the key of ‘tutorials’ would be −
 
@@ -176,16 +176,16 @@ In this case, p → 16, o → 15, i → 9, n → 14, and t → 20. Thus, the key
 
 - The sender and the receiver decide on a key. Say ‘point’ is the key. Numeric representation of this key is ‘16 15 9 14 20’. The sender wants to encrypt the message, say ‘attack from south east’. He will arrange plaintext and numeric key as follows −
 
-<p align = "center"> ![IMG](./.DATA/IMG_16.png) </p>
+![IMG](./.DATA/IMG_16.PNG)
 
 
 - He now shifts each plaintext alphabet by the number written below it to create cipher text as shown below −
 
-<p align = "center"> ![IMG](./.DATA/IMG_17.png) </p>
+![IMG](./.DATA/IMG_17.PNG)
 
 - Here, each plaintext character has been shifted by a different amount – and that amount is determined by the key. The key must be less than or equal to the size of the message.
 
-<p align = "center"> ![IMG](./.DATA/IMG_18.png) </p>
+![IMG](./.DATA/IMG_18.PNG)
 
 ### Decryption
 
@@ -206,7 +206,7 @@ The randomness of the sequence is dependent on the randomness of the initial see
 
 Let's represent each sequence as a random walk. They seem similar until we speed things up. The pseudorandom sequence must eventually repeat. This occurs when the algorithm reaches a seed it has previously used, and the cycle repeats. The length, before a pseudorandom sequence repeats, is called `the period`.
 
-<p align = "center"> ![IMG](./.DATA/IMG_10.png) </p>
+![IMG](./.DATA/IMG_10.png)
 
 ### Limitations
 
@@ -225,7 +225,7 @@ Let's represent each sequence as a random walk. They seem similar until we speed
 How to design a cipher that hides fingerprints, thus stopping the leak of information? The answer was randomness.
 Imagine Alice rolled a 26 sided die to generate a long list of random shifts, and shared this with Bob instead of a code word. Now, to encrypt her message, Alice uses the list of random shifts instead. It is important that this list of shifts be as long as the message, as to avoid any repetition. Then she sends it to Bob, who decrypts the message using the same list of random shifts she had given him.
 
-<p align = "center"> ![IMG](./.DATA/IMG_9.png) </p>
+![IMG](./.DATA/IMG_9.png)
 
 ### Advantages
 
@@ -581,3 +581,12 @@ So the code book was like a `dictionary` with the words listed alphabetically an
 Later code books would be divided in two sections, one listing the codes in numeric order and the other section listing the words or phrases in alphabetic order. This made for a stronger code but also made the book larger and more cumbersome to use.
 
 A code can provide a strong cipher, but if a code book is lost or stolen, then decipherment of all communications is compromised until a new code book is created. Designing and distributing a new code book is extremely time consuming and dangerous. Also, messages that remained secret for years can now be decrypted, yielding valuable intelligence even though the information is dated. Because of this exposure to compromise, code books were often used for diplomats or spies, which limits the number of books distributed.
+
+
+# Bibliography
+- [Wikipedia](https://www.wikipedia.org/).
+- [Khan Academy](https://www.khanacademy.org/computing/computer-science/cryptography/crypt/v/intro-to-cryptography).
+- [Traditional Ciphers](https://www.tutorialspoint.com/cryptography/pdf/traditional_ciphers.pdf).
+
+[![Developers Tag]( https://img.shields.io/badge/Developer-shashank3199-red.svg ) ]( https://github.com/shashank3199 )
+
