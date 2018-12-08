@@ -5,7 +5,7 @@ Cryptography or cryptology is the practice and study of techniques for secure co
 
 # Index
 
-- [Week 1](./Week\ 1/README.md) : Introduction to Cryptography and Standard Classical Ciphers.
+- [Week 1](https://github.com/MIST1819/Cryptography/blob/master/Week%201/README.md) : Introduction to Cryptography and Standard Classical Ciphers.
 
 # About
 
